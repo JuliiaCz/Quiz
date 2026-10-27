@@ -8,6 +8,19 @@
     <h1>Witaj w grze Złoty Gral!</h1>
     <p>Rozwiązuj zagadki obrazkowe!</p>
 
-    <a href="/kategorie">Zagraj — wybierz kategorię</a>
+    <form action="/gracz" method="POST">
+        @csrf
+
+        <label for="player_name">Twój pseudonim:</label>
+        <input
+            type="text"
+            id="player_name"
+            name="player_name"
+            required
+            maxlength="30"
+        >
+
+        <button type="submit">Zagraj — wybierz kategorię</button>
+    </form>
 </body>
 </html>

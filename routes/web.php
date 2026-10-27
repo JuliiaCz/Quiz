@@ -1,23 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QuizController;
+use App\Http\Middleware\CheckPlayerName;
 
 Route::get('/', function () {
     return view('start');
 });
 
-Route::get('/kategorie', function () {
-    return view('kategorie');
+Route::middleware([CheckPlayerName::class])->group(function () {
+    Route::get('/kategorie', [QuizController::class, 'kategorie']);
+    Route::get('/quiz/bajki', [QuizController::class, 'bajki']);
+    Route::get('/quiz/kraj', [QuizController::class, 'kraj']);
+    Route::get('/quiz/marki', [QuizController::class, 'marki']);
 });
 
-Route::get('/quiz/bajki', function () {
-    return view('bajki');
-});
-
-Route::get('/quiz/kraj', function () {
-    return view('kraj');
-});
-
-Route::get('/quiz/marki', function () {
-    return view('marki');
-});
+Route::post('/gracz', [QuizController::class, 'zapiszGracza']);
