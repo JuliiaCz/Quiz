@@ -2,17 +2,39 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kategorie — Złoty Gral</title>
+    <link rel="stylesheet" href="{{ asset('gra.css') }}">
 </head>
 <body>
-    <h1>Wybierz kategorię</h1>
+    <main class="karta">
+        <h1>Wybierz kategorię</h1>
 
-    <ul>
-        <li><a href="/quiz/bajki">Bajki jako emoji</a></li>
-        <li><a href="/quiz/kraj">Rozpoznaj kraj</a></li>
-        <li><a href="/quiz/marki">Co to za marka?</a></li>
+        <ul class="kategorie">
+            <li>
+                <a href="/quiz/bajki">
+                    <span aria-hidden="true"></span>
+                    Bajki w emoji
+                    <small>Odgadnij tytuł bajki z emoji.</small>
+                </a>
+            </li>
+            <li>
+                <a href="/quiz/kraj">
+                    <span aria-hidden="true"></span>
+                    Rozpoznaj kraj
+                    <small>Odgadnij kraj na podstawie zdjęcia.</small>
+                </a>
+            </li>
+            <li>
+                <a href="/quiz/marki">
+                    <span aria-hidden="true"></span>
+                    Co to za marka?
+                    <small>Rozpoznaj markę po logo.</small>
+                </a>
+            </li>
+        </ul>
 
-    </ul>
-    <a href="/">Wróć do menu głównego</a>
+        <a href="/">← Wróć do menu głównego</a>
+    </main>
 </body>
 </html>
