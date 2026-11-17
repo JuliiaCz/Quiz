@@ -20,6 +20,10 @@
             maxlength="30"
         >
 
+        @error('player_name')
+            <p>{{ $message }}</p>
+        @enderror
+
         <button type="submit">Zagraj — wybierz kategorię</button>
     </form>
 </body>
