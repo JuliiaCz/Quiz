@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Zagadka;
 
 class QuizController extends Controller
 {
@@ -14,7 +15,7 @@ class QuizController extends Controller
     public function bajki(Request $request)
     {
         if (!$request->session()->has('quiz_bajki')) {
-            $pula = collect(require resource_path('data/bajki.php'));
+            $pula = Zagadka::all();
 
             $pytania = $pula->shuffle()->take(5)->map(function ($zagadka) use ($pula) {
                 $bledne = $pula
